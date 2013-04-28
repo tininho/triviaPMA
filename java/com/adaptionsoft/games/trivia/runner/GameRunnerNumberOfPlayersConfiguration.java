@@ -41,5 +41,10 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// fail
 		fail("Exception not throw");
 	}
+	
+	@Test
+	public void gameRunnerCharacterizationFourPlayers(){
+		fail("not yet implemented");
+	}
 
 }
