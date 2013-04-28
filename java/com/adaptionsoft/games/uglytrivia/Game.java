@@ -18,27 +18,13 @@ public class Game {
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
     
-    public  Game(){
-    	
-    	players = new ArrayList<String>(6);
-        places = new int[6];
-        purses  = new int[6];
-        inPenaltyBox  = new boolean[6];
-
-        popQuestions = new LinkedList();
-        scienceQuestions = new LinkedList();
-        sportsQuestions = new LinkedList();
-        rockQuestions = new LinkedList();
-    	
-    	for (int i = 0; i < 50; i++) {
-			popQuestions.addLast("Pop Question " + i);
-			scienceQuestions.addLast(("Science Question " + i));
-			sportsQuestions.addLast(("Sports Question " + i));
-			rockQuestions.addLast(createRockQuestion(i));
-    	}
-    }
-    
     public Game(int numberOfPlayers) {
+    	
+    	if (isNotAnAllowedConfiguration(numberOfPlayers)){
+    		System.out.println("Please, introduce 2, 4, or a 6 players game configuration.");
+    		System.exit(0);
+    	}
+    		
 
 		players = new ArrayList<String>(numberOfPlayers);
 		places = new int[numberOfPlayers];
@@ -57,6 +43,10 @@ public class Game {
 			rockQuestions.addLast(createRockQuestion(i));
 		}
 	}
+    
+    public boolean isNotAnAllowedConfiguration(int numberOfPlayers){
+    	return (numberOfPlayers != 2 || numberOfPlayers != 4 || numberOfPlayers != 6);
+    }
 
 	public String createRockQuestion(int index){
 		return "Rock Question " + index;
