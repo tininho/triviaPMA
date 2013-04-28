@@ -17,4 +17,18 @@ public class GameRunnerInspector{
 		return aGame;
 	}
 	
+	static Game sevenPlayersinit() {
+		Game aGame = new Game();
+		
+		aGame.add("Oriol");
+		aGame.add("Toni");
+		aGame.add("Jordi");
+		aGame.add("Sandra");
+		aGame.add("Aida");
+		aGame.add("Arthur");
+		aGame.add("Tino");
+		
+		return aGame;
+	}
+	
 }
