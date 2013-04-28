@@ -33,10 +33,10 @@ public class GameRunnerTest {
 		Game aGame = GameRunner.init();
 		Random random = new Random(0L);
 		
-		//then
+		// check
 		GameRunner.run(aGame, random);
 		
-		//verify
+		// verify
 		assertEquals(2233795382L, checker.checksum.getValue());
 	}
 
