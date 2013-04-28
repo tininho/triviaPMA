@@ -17,7 +17,7 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// given
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
-		Game aGame = GameRunnerInspector.sixPlayersinit();
+		Game aGame = GameRunner.sixPlayersinit();
 		Random random = new Random(0L);
 
 		// check
