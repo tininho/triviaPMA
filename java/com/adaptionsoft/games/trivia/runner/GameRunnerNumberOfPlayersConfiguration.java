@@ -37,6 +37,9 @@ public class GameRunnerNumberOfPlayersConfiguration {
 
 		// check
 		GameRunner.run(aGame, random);
+		
+		// fail
+		fail("Exception not throw");
 	}
 
 }
