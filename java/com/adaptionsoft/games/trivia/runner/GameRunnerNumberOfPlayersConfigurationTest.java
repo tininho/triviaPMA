@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.adaptionsoft.games.uglytrivia.Game;
 import com.adaptionsoft.games.util.Checker;
 
-public class GameRunnerNumberOfPlayersConfiguration {
+public class GameRunnerNumberOfPlayersConfigurationTest {
 
 	@Test
 	public void gameRunnerCharacterizationSixPlayers() {
