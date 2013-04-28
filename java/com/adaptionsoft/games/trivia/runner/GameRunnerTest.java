@@ -26,7 +26,7 @@ public class GameRunnerTest {
 	}
 	
 	@Test
-	public void gameRunnerCharacterizationOs(){
+	public void gameRunnerCharacterization(){
 		// given
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
