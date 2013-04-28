@@ -24,7 +24,7 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		GameRunner.run(aGame, random);
 
 		// verify
-		assertEquals(2233795382L, checker.getChecksumValue());
+		assertEquals(1834776121L, checker.getChecksumValue());
 	}
 
 }
