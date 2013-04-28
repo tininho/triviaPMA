@@ -32,7 +32,7 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// given
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
-		Game aGame = GameRunnerInspector.sevenPlayersinit();
+		Game aGame = GameRunnerInspector.sevenPlayersInit();
 		Random random = new Random(0L);
 
 		// check
@@ -47,7 +47,7 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// given
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
-		Game aGame = GameRunnerInspector.fourPlayersinit();
+		Game aGame = GameRunnerInspector.fourPlayersInit();
 		Random random = new Random(0L);
 
 		// check
@@ -56,10 +56,20 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// verify
 		assertEquals(1826728610L, checker.getChecksumValue());
 	}
-	
+
 	@Test
-	public void gameRunnerCharacterizationOnlySixPlayers(){
-		fail("not yet implemented");
+	public void gameRunnerCharacterizationOnlySixPlayers() {
+		// given
+		Checker checker = new Checker();
+		System.setOut(new PrintStream(checker));
+		Game aGame = GameRunnerInspector.onlySixPlayersInit();
+		Random random = new Random(0L);
+
+		// check
+		GameRunner.run(aGame, random);
+
+		// verify
+		assertEquals(1834776121L, checker.getChecksumValue());
 	}
 
 }

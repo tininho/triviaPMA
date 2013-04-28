@@ -5,20 +5,31 @@ import java.util.LinkedList;
 
 
 public class Game {
-    ArrayList<String> players = new ArrayList<String>(6);
-    int[] places = new int[6];
-    int[] purses  = new int[6];
-    boolean[] inPenaltyBox  = new boolean[6];
+    ArrayList<String> players;
+    int[] places;
+    int[] purses;
+    boolean[] inPenaltyBox;
 
-    LinkedList popQuestions = new LinkedList();
-    LinkedList scienceQuestions = new LinkedList();
-    LinkedList sportsQuestions = new LinkedList();
-    LinkedList rockQuestions = new LinkedList();
+    LinkedList popQuestions;
+    LinkedList scienceQuestions;
+    LinkedList sportsQuestions;
+    LinkedList rockQuestions;
     
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
     
     public  Game(){
+    	
+    	players = new ArrayList<String>(6);
+        places = new int[6];
+        purses  = new int[6];
+        inPenaltyBox  = new boolean[6];
+
+        popQuestions = new LinkedList();
+        scienceQuestions = new LinkedList();
+        sportsQuestions = new LinkedList();
+        rockQuestions = new LinkedList();
+    	
     	for (int i = 0; i < 50; i++) {
 			popQuestions.addLast("Pop Question " + i);
 			scienceQuestions.addLast(("Science Question " + i));
