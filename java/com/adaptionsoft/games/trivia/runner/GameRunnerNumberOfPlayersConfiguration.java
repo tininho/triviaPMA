@@ -56,5 +56,10 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// verify
 		assertEquals(1826728610L, checker.getChecksumValue());
 	}
+	
+	@Test
+	public void gameRunnerCharacterizationOnlySixPlayers(){
+		fail("not yet implemented");
+	}
 
 }
