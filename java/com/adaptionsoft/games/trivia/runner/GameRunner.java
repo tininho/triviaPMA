@@ -9,9 +9,7 @@ public class GameRunner {
 	private static boolean notAWinner;
 
 	public static void main(String[] args) {
-		Game aGame = new Game();
-
-		init(aGame);
+		Game aGame = init();
 
 		Random rand = new Random();
 
@@ -19,13 +17,17 @@ public class GameRunner {
 
 	}
 
-	protected static void init(Game aGame) {
+	static Game init() {
+		Game aGame = new Game();
+		
 		aGame.add("Chet");
 		aGame.add("Pat");
 		aGame.add("Sue");
+		
+		return aGame;
 	}
 
-	protected static void run(Game aGame, Random rand) {
+	static void run(Game aGame, Random rand) {
 		do {
 
 			aGame.roll(rand.nextInt(5) + 1);
