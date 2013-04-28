@@ -31,4 +31,15 @@ public class GameRunnerInspector{
 		return aGame;
 	}
 	
+	static Game fourPlayersinit() {
+		Game aGame = new Game();
+		
+		aGame.add("Oriol");
+		aGame.add("Toni");
+		aGame.add("Jordi");
+		aGame.add("Sandra");
+		
+		return aGame;
+	}
+	
 }

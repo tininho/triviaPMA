@@ -26,7 +26,7 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// verify
 		assertEquals(1834776121L, checker.getChecksumValue());
 	}
-	
+
 	@Test(expected = Exception.class)
 	public void gameRunnerCharacterizationSevenPlayers() {
 		// given
@@ -37,14 +37,24 @@ public class GameRunnerNumberOfPlayersConfiguration {
 
 		// check
 		GameRunner.run(aGame, random);
-		
+
 		// fail
 		fail("Exception not throw");
 	}
-	
+
 	@Test
-	public void gameRunnerCharacterizationFourPlayers(){
-		fail("not yet implemented");
+	public void gameRunnerCharacterizationFourPlayers() {
+		// given
+		Checker checker = new Checker();
+		System.setOut(new PrintStream(checker));
+		Game aGame = GameRunnerInspector.fourPlayersinit();
+		Random random = new Random(0L);
+
+		// check
+		GameRunner.run(aGame, random);
+
+		// verify
+		assertEquals(1826728610L, checker.getChecksumValue());
 	}
 
 }
