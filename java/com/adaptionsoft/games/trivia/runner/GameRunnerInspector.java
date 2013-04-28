@@ -67,5 +67,14 @@ public class GameRunnerInspector{
 		
 		return aGame;
 	}
+
+	static Game onlyTwoPlayersInit() {
+		Game aGame = new GameInspector(2);
+		
+		aGame.add("Oriol");
+		aGame.add("Toni");
+		
+		return aGame;
+	}
 	
 }

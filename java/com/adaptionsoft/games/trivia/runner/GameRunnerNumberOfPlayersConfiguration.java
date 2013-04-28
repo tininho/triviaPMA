@@ -71,7 +71,7 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// verify
 		assertEquals(1834776121L, checker.getChecksumValue());
 	}
-	
+
 	@Test
 	public void gameRunnerCharacterizationOnlyFourPlayers() {
 		// given
@@ -86,10 +86,20 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// verify
 		assertEquals(1826728610L, checker.getChecksumValue());
 	}
-	
+
 	@Test
 	public void gameRunnerCharacterizationOnlyTwoPlayers() {
-		fail("test not yet implemented");
+		// given
+		Checker checker = new Checker();
+		System.setOut(new PrintStream(checker));
+		Game aGame = GameRunnerInspector.onlyTwoPlayersInit();
+		Random random = new Random(0L);
+
+		// check
+		GameRunner.run(aGame, random);
+
+		// verify
+		assertEquals(1019657724L, checker.getChecksumValue());
 	}
 
 }
