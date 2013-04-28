@@ -62,14 +62,14 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// given
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
-		Game aGame = GameRunnerInspector.onlySixPlayersInit();
+		Game aGame = GameRunner.init(6);
 		Random random = new Random(0L);
 
 		// check
 		GameRunner.run(aGame, random);
 
 		// verify
-		assertEquals(1834776121L, checker.getChecksumValue());
+		assertEquals(3069541038L, checker.getChecksumValue());
 	}
 
 	@Test
@@ -77,14 +77,14 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// given
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
-		Game aGame = GameRunnerInspector.onlyFourPlayersInit();
+		Game aGame = GameRunner.init(4);
 		Random random = new Random(0L);
 
 		// check
 		GameRunner.run(aGame, random);
 
 		// verify
-		assertEquals(1826728610L, checker.getChecksumValue());
+		assertEquals(346077682L, checker.getChecksumValue());
 	}
 
 	@Test
@@ -92,14 +92,14 @@ public class GameRunnerNumberOfPlayersConfiguration {
 		// given
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
-		Game aGame = GameRunnerInspector.onlyTwoPlayersInit();
+		Game aGame = GameRunner.init(2);
 		Random random = new Random(0L);
 
 		// check
 		GameRunner.run(aGame, random);
 
 		// verify
-		assertEquals(1019657724L, checker.getChecksumValue());
+		assertEquals(3433267896L, checker.getChecksumValue());
 	}
 
 }
