@@ -36,29 +36,6 @@ public class GameRunner {
 		return aGame;
 	}
 
-	static Game init() {
-		Game aGame = new Game();
-		
-		aGame.add("Chet");
-		aGame.add("Pat");
-		aGame.add("Sue");
-		
-		return aGame;
-	}
-	
-	static Game sixPlayersinit() {
-		Game aGame = new Game();
-		
-		aGame.add("Oriol");
-		aGame.add("Toni");
-		aGame.add("Jordi");
-		aGame.add("Sandra");
-		aGame.add("Aida");
-		aGame.add("Arthur");
-		
-		return aGame;
-	}
-
 	static void run(Game aGame, Random rand) {
 		do {
 
