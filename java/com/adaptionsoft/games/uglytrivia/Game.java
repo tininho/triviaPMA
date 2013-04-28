@@ -9,7 +9,6 @@ public class Game {
     int[] places = new int[6];
     int[] purses  = new int[6];
     boolean[] inPenaltyBox  = new boolean[6];
-    int[] highscores= new int[6];
 
     LinkedList popQuestions = new LinkedList();
     LinkedList scienceQuestions = new LinkedList();
@@ -39,10 +38,6 @@ public class Game {
 	    System.out.println(playerName + " was added");
 	    System.out.println("They are player number " + players.size());
 		return true;
-	}
-	
-	public int howManyPlayers() {
-		return players.size();
 	}
 
 	public void roll(int roll) {
