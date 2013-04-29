@@ -32,4 +32,9 @@ public class PrinterTest {
 		assertEquals(2976813313L,checker.getChecksumValue());
 	}
 	
+	@Test
+	public void shouldPrintThreeObjectsConcat(){
+		fail("not yet implemented");
+	}
+	
 }
