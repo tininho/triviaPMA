@@ -1,9 +1,14 @@
 package com.adaptionsoft.games.uglytrivia;
 
+import com.adaptionsoft.games.util.Printer;
+
 public class GameInspector extends Game{
 
+	Printer printer;
+	
 	public GameInspector(int numberOfPlayers) {
 		super(numberOfPlayers);
+		printer = new Printer();
 	}
 
 	@Override
@@ -11,8 +16,8 @@ public class GameInspector extends Game{
 		
 	    players.add(playerName);
 	    
-	    System.out.println(playerName + " was added");
-	    System.out.println("They are player number " + players.size());
+	    printer.printMessage(playerName, " was added");
+	    printer.printMessage("They are player number ", players.size());
 		return true;
 	}
 	
