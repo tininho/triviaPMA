@@ -39,4 +39,11 @@ public class PrinterTest {
 		assertEquals(647215248L,checker.getChecksumValue());
 	}
 	
+	@Test
+	public void shouldPrintAnyNumberOfObjects(){
+		Printer printer = new Printer();
+		printer.printMessage("HelloWorld", 5, 0L, "que tal", "patatin", 67);
+		assertEquals(2063259661L,checker.getChecksumValue());
+	}
+	
 }
