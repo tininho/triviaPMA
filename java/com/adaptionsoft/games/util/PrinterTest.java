@@ -20,7 +20,7 @@ public class PrinterTest {
 	@Test
 	public void shouldPrintOneMessage(){
 		Printer printer = new Printer();
-		printer.printMessage(0L );
+		printer.printMessage("0");
 		assertEquals(2387717073L,checker.getChecksumValue());
 	}
 	
