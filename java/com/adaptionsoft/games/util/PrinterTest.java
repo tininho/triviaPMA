@@ -18,13 +18,6 @@ public class PrinterTest {
 	}
 	
 	@Test
-	public void shouldPrintATextMessage(){
-		Printer printer = new Printer();
-		printer.printMessage();
-		assertEquals(3823729743L,checker.getChecksumValue());
-	}
-	
-	@Test
 	public void shouldPrintTwoObjectsConcat(){
 		Printer printer = new Printer();
 		printer.printMessage("HelloWorld", 5 );
