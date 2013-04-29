@@ -24,7 +24,6 @@ public class Game {
     		System.out.println("Please, introduce 2, 4, or a 6 players game configuration.");
     		System.exit(0);
     	}
-    		
 
 		players = new ArrayList<String>(numberOfPlayers);
 		places = new int[numberOfPlayers];

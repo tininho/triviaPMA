@@ -8,7 +8,6 @@ import java.util.Random;
 import org.junit.Test;
 
 import com.adaptionsoft.games.uglytrivia.Game;
-import com.adaptionsoft.games.uglytrivia.GameInspector;
 import com.adaptionsoft.games.util.Checker;
 
 public class GameRunnerNumberOfPlayersConfigurationTest {
