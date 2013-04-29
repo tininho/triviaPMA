@@ -20,7 +20,9 @@ public class PrinterTest {
 	
 	@Test
 	public void shouldPrintOneMessage(){
-		fail("not yet implemented");
+		Printer printer = new Printer();
+		printer.printMessage(0L );
+		assertEquals(2387717073L,checker.getChecksumValue());
 	}
 	
 	@Test

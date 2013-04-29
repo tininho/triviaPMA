@@ -6,4 +6,8 @@ public class Printer {
 		System.out.println(object1.toString() + object2.toString());
 	}
 
+	public void printMessage(Object object) {
+		System.out.println(object.toString());
+	}
+
 }
