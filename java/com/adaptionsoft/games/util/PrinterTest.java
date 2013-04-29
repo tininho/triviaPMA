@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.util;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.io.PrintStream;
 
@@ -23,20 +22,6 @@ public class PrinterTest {
 		Printer printer = new Printer();
 		printer.printMessage(0L );
 		assertEquals(2387717073L,checker.getChecksumValue());
-	}
-	
-	@Test
-	public void shouldPrintTwoObjectsConcat(){
-		Printer printer = new Printer();
-		printer.printMessage("HelloWorld", 5 );
-		assertEquals(2976813313L,checker.getChecksumValue());
-	}
-	
-	@Test
-	public void shouldPrintThreeObjectsConcat(){
-		Printer printer = new Printer();
-		printer.printMessage("HelloWorld", 5, 0L);
-		assertEquals(647215248L,checker.getChecksumValue());
 	}
 	
 	@Test
