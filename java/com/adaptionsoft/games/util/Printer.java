@@ -2,8 +2,8 @@ package com.adaptionsoft.games.util;
 
 public class Printer {
 
-	public Object printMessage() {
-		return "HelloWorld";
+	public void printMessage() {
+		System.out.println("HelloWorld");
 	}
 
 }
