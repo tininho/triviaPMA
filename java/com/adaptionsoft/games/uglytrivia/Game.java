@@ -2,6 +2,7 @@ package com.adaptionsoft.games.uglytrivia;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 
 public class Game {
@@ -15,12 +16,16 @@ public class Game {
     LinkedList<String> sportsQuestions;
     LinkedList<String> rockQuestions;
     
+    GameConfiguration gameConfiguration;
+    
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
     
     public Game(int numberOfPlayers) {
     	
-    	if (isNotAnAllowedConfiguration(numberOfPlayers)){
+    	gameConfiguration = new GameConfiguration();
+    	
+    	if (gameConfiguration.isNotAnAllowedConfiguration(numberOfPlayers)){
     		System.out.println("Please, introduce 2, 4, or a 6 players game configuration.");
     		System.exit(0);
     	}
@@ -42,10 +47,6 @@ public class Game {
 			rockQuestions.addLast(createRockQuestion(i));
 		}
 	}
-    
-    public boolean isNotAnAllowedConfiguration(int numberOfPlayers){
-    	return ! (numberOfPlayers == 2 || numberOfPlayers == 4 || numberOfPlayers == 6);
-    }
 
 	public String createRockQuestion(int index){
 		return "Rock Question " + index;
