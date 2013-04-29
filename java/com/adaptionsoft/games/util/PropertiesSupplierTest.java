@@ -9,7 +9,7 @@ public class PropertiesSupplierTest {
 	@Test
 	public void obtainOnePropertyMessage() {
 		PropertiesSupplier supplier = new PropertiesSupplier();
-		String result = supplier.obtainOneMessage();
+		String result = supplier.obtainOneMessage("hola");
 		assertEquals("HelloWorld", result);
 	}
 
