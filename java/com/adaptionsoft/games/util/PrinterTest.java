@@ -34,7 +34,9 @@ public class PrinterTest {
 	
 	@Test
 	public void shouldPrintThreeObjectsConcat(){
-		fail("not yet implemented");
+		Printer printer = new Printer();
+		printer.printMessage("HelloWorld", 5, 0L);
+		assertEquals(647215248L,checker.getChecksumValue());
 	}
 	
 }
