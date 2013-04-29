@@ -10,7 +10,7 @@ public class Printer {
 	public void printMessage(Object ... object) {
 		String message = "";
 		for (int i = 0; i < object.length; i++) {
-			message+=object.toString();
+			message+=object[i].toString();
 		}
 		System.out.println(message);
 	}
