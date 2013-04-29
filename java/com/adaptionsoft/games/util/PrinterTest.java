@@ -25,14 +25,7 @@ public class PrinterTest {
 	}
 	
 	@Test
-	public void shouldPrintObjectToStringConcatOtherString(){
-		Printer printer = new Printer();
-		printer.printMessage(new String("Tino"), "HelloWorld");
-		assertEquals(845607640L,checker.getChecksumValue());
-	}
-	
-	@Test
-	public void shouldPrintAStringConcatWithAnObject(){
+	public void shouldPrintTwoObjectsConcat(){
 		Printer printer = new Printer();
 		printer.printMessage("HelloWorld", 5 );
 		assertEquals(2976813313L,checker.getChecksumValue());
