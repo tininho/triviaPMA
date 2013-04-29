@@ -1,7 +1,6 @@
 package com.adaptionsoft.games.util;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.io.PrintStream;
 
@@ -27,7 +26,9 @@ public class PrinterTest {
 	
 	@Test
 	public void shouldPrintObjectToStringConcatOtherString(){
-		fail("not yet implemented");
+		Printer printer = new Printer();
+		printer.printMessage(new String("Tino"), "HelloWorld");
+		assertEquals(845607640L,checker.getChecksumValue());
 	}
 	
 }
