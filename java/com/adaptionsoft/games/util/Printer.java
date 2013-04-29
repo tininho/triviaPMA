@@ -6,8 +6,8 @@ public class Printer {
 		System.out.println("HelloWorld");
 	}
 
-	public void printMessage(Object object, String string) {
-		System.out.println(object.toString() + string);
+	public void printMessage(Object object1, Object object2) {
+		System.out.println(object1.toString() + object2.toString());
 	}
 
 }
