@@ -10,10 +10,10 @@ public class Game {
     int[] purses;
     boolean[] inPenaltyBox;
 
-    LinkedList popQuestions;
-    LinkedList scienceQuestions;
-    LinkedList sportsQuestions;
-    LinkedList rockQuestions;
+    LinkedList<String> popQuestions;
+    LinkedList<String> scienceQuestions;
+    LinkedList<String> sportsQuestions;
+    LinkedList<String> rockQuestions;
     
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
@@ -30,10 +30,10 @@ public class Game {
 		purses = new int[numberOfPlayers];
 		inPenaltyBox = new boolean[numberOfPlayers];
 
-		popQuestions = new LinkedList();
-		scienceQuestions = new LinkedList();
-		sportsQuestions = new LinkedList();
-		rockQuestions = new LinkedList();
+		popQuestions = new LinkedList<String>();
+		scienceQuestions = new LinkedList<String>();
+		sportsQuestions = new LinkedList<String>();
+		rockQuestions = new LinkedList<String>();
 
 		for (int i = 0; i < 50; i++) {
 			popQuestions.addLast("Pop Question " + i);
@@ -44,7 +44,7 @@ public class Game {
 	}
     
     public boolean isNotAnAllowedConfiguration(int numberOfPlayers){
-    	return (numberOfPlayers != 2 || numberOfPlayers != 4 || numberOfPlayers != 6);
+    	return ! (numberOfPlayers == 2 || numberOfPlayers == 4 || numberOfPlayers == 6);
     }
 
 	public String createRockQuestion(int index){

@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.io.PrintStream;
 import java.util.Random;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.adaptionsoft.games.uglytrivia.Game;
@@ -12,11 +13,17 @@ import com.adaptionsoft.games.util.Checker;
 
 public class GameRunnerNumberOfPlayersConfigurationTest {
 
+	Checker checker;
+	
+	@Before
+	public void initialization(){
+		checker = new Checker();
+		System.setOut(new PrintStream(checker));
+	}
+	
 	@Test
 	public void gameRunnerCharacterizationOnlySixPlayers() {
 		// given
-		Checker checker = new Checker();
-		System.setOut(new PrintStream(checker));
 		Game aGame = GameRunner.init(6);
 		Random random = new Random(0L);
 
@@ -30,8 +37,6 @@ public class GameRunnerNumberOfPlayersConfigurationTest {
 	@Test
 	public void gameRunnerCharacterizationOnlyFourPlayers() {
 		// given
-		Checker checker = new Checker();
-		System.setOut(new PrintStream(checker));
 		Game aGame = GameRunner.init(4);
 		Random random = new Random(0L);
 
@@ -45,8 +50,6 @@ public class GameRunnerNumberOfPlayersConfigurationTest {
 	@Test
 	public void gameRunnerCharacterizationOnlyTwoPlayers() {
 		// given
-		Checker checker = new Checker();
-		System.setOut(new PrintStream(checker));
 		Game aGame = GameRunner.init(2);
 		Random random = new Random(0L);
 
