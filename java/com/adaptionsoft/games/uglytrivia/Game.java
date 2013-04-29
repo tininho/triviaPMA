@@ -3,6 +3,8 @@ package com.adaptionsoft.games.uglytrivia;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import com.adaptionsoft.games.util.Printer;
+
 
 public class Game {
     ArrayList<String> players;
@@ -16,6 +18,7 @@ public class Game {
     LinkedList<String> rockQuestions;
     
     GameConfiguration gameConfiguration;
+    Printer printer;
     
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
@@ -23,6 +26,7 @@ public class Game {
     public Game(int numberOfPlayers) {
     	
     	gameConfiguration = new GameConfiguration();
+    	printer = new Printer();
     	
     	if (gameConfiguration.isNotAnAllowedConfiguration(numberOfPlayers)){
     		System.out.println("Please, introduce 2, 4, or a 6 players game configuration.");
@@ -51,8 +55,8 @@ public class Game {
 		
 	    players.add(playerName);
 	    
-	    System.out.println(playerName + " was added");
-	    System.out.println("They are player number " + players.size());
+	    printer.printMessage(playerName," was added");
+	    printer.printMessage("They are player number ", players.size());
 		return true;
 	}
 
