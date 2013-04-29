@@ -8,7 +8,9 @@ public class PropertiesSupplierTest {
 
 	@Test
 	public void obtainOnePropertyMessage() {
-		fail("Not yet implemented");
+		PropertiesSupplier supplier = new PropertiesSupplier();
+		String result = supplier.obtainOneMessage();
+		assertEquals("HelloWorld", result);
 	}
 
 }
