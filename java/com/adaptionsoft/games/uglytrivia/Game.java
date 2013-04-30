@@ -29,7 +29,7 @@ public class Game {
     	printer = new Printer();
     	
     	if (gameConfiguration.isNotAnAllowedConfiguration(numberOfPlayers)){
-    		printer.printMessage("Please, introduce 2, 4, or a 6 players game configuration.");
+    		printer.printMessage("confallowed");
     		System.exit(0);
     	}
 
@@ -55,30 +55,30 @@ public class Game {
 		
 	    players.add(playerName);
 	    
-	    printer.printMessage(playerName," was added");
-	    printer.printMessage("They are player number ", players.size());
+	    printer.printMessage(playerName,"added");
+	    printer.printMessage("playernumber", players.size());
 		return true;
 	}
 
 	public void roll(int roll) {
-		printer.printMessage(players.get(currentPlayer)," is the current player");
-		printer.printMessage("They have rolled a ",roll);
+		printer.printMessage(players.get(currentPlayer),"currentplayer");
+		printer.printMessage("rolled",roll);
 		
 		if (inPenaltyBox[currentPlayer]) {
 			if (roll % 2 != 0) {
 				isGettingOutOfPenaltyBox = true;
 				
-				printer.printMessage(players.get(currentPlayer)," is getting out of the penalty box");
+				printer.printMessage(players.get(currentPlayer),"");
 				places[currentPlayer] = places[currentPlayer] + roll;
 				if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 				
 				printer.printMessage(players.get(currentPlayer) 
-						, "'s new location is " 
+						, "playerlocation" 
 						, places[currentPlayer]);
-				printer.printMessage("The category is ",currentCategory());
+				printer.printMessage("category",currentCategory());
 				askQuestion();
 			} else {
-				printer.printMessage(players.get(currentPlayer)," is not getting out of the penalty box");
+				printer.printMessage(players.get(currentPlayer),"outpenalty");
 				isGettingOutOfPenaltyBox = false;
 				}
 			

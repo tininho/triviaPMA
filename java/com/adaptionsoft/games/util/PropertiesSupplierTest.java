@@ -10,7 +10,7 @@ public class PropertiesSupplierTest {
 	public void obtainOnePropertyMessage() {
 		PropertiesSupplier supplier = new PropertiesSupplier();
 		String result = supplier.obtainOneMessage("added");
-		assertEquals("was added", result);
+		assertEquals(" was added", result);
 	}
 
 }

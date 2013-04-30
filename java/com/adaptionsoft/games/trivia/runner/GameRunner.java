@@ -30,7 +30,7 @@ public class GameRunner {
 		Game aGame = new Game(numberOfPlayers);
 		
 		for (int i = 0; i < numberOfPlayers; i++) {
-			aGame.add("Player "+(i+1));
+			aGame.add("Player"+(i+1));
 		}
 		
 		return aGame;

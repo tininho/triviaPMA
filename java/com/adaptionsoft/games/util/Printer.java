@@ -23,15 +23,9 @@ public class Printer {
 		String message = "";
 		for (int i = 0; i < object.length; i++) {
 			try{
-				if (i==0)
-					message=supplier.obtainOneMessage(object[i].toString());
-				else
-					message = message + " " + supplier.obtainOneMessage(object[i].toString());
+				message = message + supplier.obtainOneMessage(object[i].toString());
 			}catch(MissingResourceException e){
-				if (i==0)
-					message=object[i].toString();
-				else
-					message = message + " " + object[i].toString();
+				message = message + object[i].toString();
 			}
 		}
 		System.out.println(message);

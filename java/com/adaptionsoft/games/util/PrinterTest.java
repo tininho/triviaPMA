@@ -23,12 +23,12 @@ public class PrinterTest {
 		printer.printMessage("0");
 		assertEquals(2387717073L,checker.getChecksumValue());
 	}
-	
+
 	@Test
 	public void shouldPrintAnyNumberOfObjects(){
 		Printer printer = new Printer();
 		printer.printMessage("HelloWorld", 5, 0L, "que tal", "patatin", 67);
-		assertEquals(1521998185L,checker.getChecksumValue());
+		assertEquals(3787434164L,checker.getChecksumValue());
 	}
 	
 }
