@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import com.adaptionsoft.games.util.Printer;
+import com.adaptionsoft.games.util.PropertiesSupplier;
 
 
 public class Game {
@@ -11,6 +12,7 @@ public class Game {
     int[] places;
     int[] purses;
     boolean[] inPenaltyBox;
+    PropertiesSupplier supplier;
 
     LinkedList<String> popQuestions;
     LinkedList<String> scienceQuestions;
@@ -27,6 +29,7 @@ public class Game {
     	
     	gameConfiguration = new GameConfiguration();
     	printer = new Printer();
+    	supplier = new PropertiesSupplier();
     	
     	if (gameConfiguration.isNotAnAllowedConfiguration(numberOfPlayers)){
     		printer.printMessage("confallowed");
@@ -44,10 +47,10 @@ public class Game {
 		rockQuestions = new LinkedList<String>();
 
 		for (int i = 0; i < 50; i++) {
-			popQuestions.addLast("Pop Question " + i);
-			scienceQuestions.addLast(("Science Question " + i));
-			sportsQuestions.addLast(("Sports Question " + i));
-			rockQuestions.addLast(("Rock Question " + i));
+			popQuestions.addLast(supplier.obtainOneMessage("pop") + i);
+			scienceQuestions.addLast(supplier.obtainOneMessage("science") + i);
+			sportsQuestions.addLast(supplier.obtainOneMessage("sports") + i);
+			rockQuestions.addLast(supplier.obtainOneMessage("rock") + i);
 		}
 	}
 
