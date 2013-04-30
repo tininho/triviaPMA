@@ -16,8 +16,8 @@ public class GameInspector extends Game{
 		
 	    players.add(playerName);
 	    
-	    printer.printMessage(playerName, " was added");
-	    printer.printMessage("They are player number ", players.size());
+	    printer.printMessage(playerName, "added");
+	    printer.printMessage("playernumber", players.size());
 		return true;
 	}
 	
