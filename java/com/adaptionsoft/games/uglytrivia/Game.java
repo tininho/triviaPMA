@@ -67,21 +67,19 @@ public class Game {
 		if (inPenaltyBox[currentPlayer]) {
 			if (roll % 2 != 0) {
 				isGettingOutOfPenaltyBox = true;
-				
 				printer.printMessage(players.get(currentPlayer),"");
-				askingQuestion(roll);
+				preparingForAskingQuestion(roll);
 			} else {
 				printer.printMessage(players.get(currentPlayer),"outpenalty");
 				isGettingOutOfPenaltyBox = false;
 			}
 			
 		} else {
-			askingQuestion(roll);
+			preparingForAskingQuestion(roll);
 		}
-		
 	}
 
-	protected void askingQuestion(int roll) {
+	protected void preparingForAskingQuestion(int roll) {
 		places[currentPlayer] = places[currentPlayer] + roll;
 		if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 		
@@ -120,46 +118,39 @@ public class Game {
 	public boolean wasCorrectlyAnswered() {
 		if (inPenaltyBox[currentPlayer]){
 			if (isGettingOutOfPenaltyBox) {
-				printer.printMessage("Answer was correct!!!!");
-				purses[currentPlayer]++;
-				printer.printMessage(players.get(currentPlayer) 
-						, " now has "
-						, purses[currentPlayer]
-						, " Gold Coins.");
-				
-				boolean winner = didPlayerWin();
-				currentPlayer++;
-				if (currentPlayer == players.size()) currentPlayer = 0;
-				
-				return winner;
+				currentCoinsAfterCorrectAnswer();	
+				return checkingPlayerWinner();
 			} else {
 				currentPlayer++;
 				if (currentPlayer == players.size()) currentPlayer = 0;
 				return true;
 			}
-			
-			
-			
 		} else {
-		
-			printer.printMessage("Answer was corrent!!!!");
-			purses[currentPlayer]++;
-			printer.printMessage(players.get(currentPlayer) 
-					, " now has "
-					, purses[currentPlayer]
-					, " Gold Coins.");
-			
-			boolean winner = didPlayerWin();
-			currentPlayer++;
-			if (currentPlayer == players.size()) currentPlayer = 0;
-			
-			return winner;
+			currentCoinsAfterCorrectAnswer();
+			return checkingPlayerWinner();
 		}
+	}
+
+	protected boolean checkingPlayerWinner() {
+		boolean winner = didPlayerWin();
+		currentPlayer++;
+		if (currentPlayer == players.size()) currentPlayer = 0;
+		
+		return winner;
+	}
+
+	protected void currentCoinsAfterCorrectAnswer() {
+		printer.printMessage("correctanswer");
+		purses[currentPlayer]++;
+		printer.printMessage(players.get(currentPlayer) 
+				, "now"
+				, purses[currentPlayer]
+				, "coins");
 	}
 	
 	public boolean wrongAnswer(){
-		printer.printMessage("Question was incorrectly answered");
-		printer.printMessage(players.get(currentPlayer), " was sent to the penalty box");
+		printer.printMessage("incorrectanswer");
+		printer.printMessage(players.get(currentPlayer), "sentbox");
 		inPenaltyBox[currentPlayer] = true;
 		
 		currentPlayer++;

@@ -31,7 +31,7 @@ public class GameRunnerNumberOfPlayersConfigurationTest {
 		GameRunner.run(aGame, random);
 
 		// verify
-		assertEquals(4084531537L, checker.getChecksumValue());
+		assertEquals(1820951815L, checker.getChecksumValue());
 	}
 
 	@Test
@@ -44,7 +44,7 @@ public class GameRunnerNumberOfPlayersConfigurationTest {
 		GameRunner.run(aGame, random);
 
 		// verify
-		assertEquals(3077184502L, checker.getChecksumValue());
+		assertEquals(3848806441L, checker.getChecksumValue());
 	}
 
 	@Test
@@ -57,7 +57,7 @@ public class GameRunnerNumberOfPlayersConfigurationTest {
 		GameRunner.run(aGame, random);
 
 		// verify
-		assertEquals(4182369844L, checker.getChecksumValue());
+		assertEquals(4282175943L, checker.getChecksumValue());
 	}
 
 }
