@@ -69,31 +69,27 @@ public class Game {
 				isGettingOutOfPenaltyBox = true;
 				
 				printer.printMessage(players.get(currentPlayer),"");
-				places[currentPlayer] = places[currentPlayer] + roll;
-				if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-				
-				printer.printMessage(players.get(currentPlayer) 
-						, "playerlocation" 
-						, places[currentPlayer]);
-				printer.printMessage("category",currentCategory());
-				askQuestion();
+				askingQuestion(roll);
 			} else {
 				printer.printMessage(players.get(currentPlayer),"outpenalty");
 				isGettingOutOfPenaltyBox = false;
-				}
+			}
 			
 		} else {
-		
-			places[currentPlayer] = places[currentPlayer] + roll;
-			if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-			
-			printer.printMessage(players.get(currentPlayer) 
-					, "'s new location is " 
-					, places[currentPlayer]);
-			printer.printMessage("The category is ",currentCategory());
-			askQuestion();
+			askingQuestion(roll);
 		}
 		
+	}
+
+	protected void askingQuestion(int roll) {
+		places[currentPlayer] = places[currentPlayer] + roll;
+		if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+		
+		printer.printMessage(players.get(currentPlayer) 
+				, "playerlocation" 
+				, places[currentPlayer]);
+		printer.printMessage("category",currentCategory());
+		askQuestion();
 	}
 
 	private void askQuestion() {
