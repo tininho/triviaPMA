@@ -2,6 +2,7 @@ package com.adaptionsoft.games.uglytrivia;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Locale;
 
 import com.adaptionsoft.games.util.Printer;
 import com.adaptionsoft.games.util.PropertiesSupplier;
@@ -13,6 +14,7 @@ public class Game {
     int[] purses;
     boolean[] inPenaltyBox;
     PropertiesSupplier supplier;
+    Locale locale;
 
     LinkedList<String> popQuestions;
     LinkedList<String> scienceQuestions;
@@ -30,9 +32,10 @@ public class Game {
     	gameConfiguration = new GameConfiguration();
     	printer = new Printer();
     	supplier = new PropertiesSupplier();
+    	locale = Locale.ENGLISH;
     	
     	if (gameConfiguration.isNotAnAllowedConfiguration(numberOfPlayers)){
-    		printer.printMessage("confallowed");
+    		printer.printMessageByLanguage(locale,"confallowed");
     		System.exit(0);
     	}
 
@@ -58,22 +61,22 @@ public class Game {
 		
 	    players.add(playerName);
 	    
-	    printer.printMessage(playerName,"added");
-	    printer.printMessage("playernumber", players.size());
+	    printer.printMessageByLanguage(locale,playerName,"added");
+	    printer.printMessageByLanguage(locale,"playernumber", players.size());
 		return true;
 	}
 
 	public void roll(int roll) {
-		printer.printMessage(players.get(currentPlayer),"currentplayer");
-		printer.printMessage("rolled",roll);
+		printer.printMessageByLanguage(locale,players.get(currentPlayer),"currentplayer");
+		printer.printMessageByLanguage(locale,"rolled",roll);
 		
 		if (inPenaltyBox[currentPlayer]) {
 			if (roll % 2 != 0) {
 				isGettingOutOfPenaltyBox = true;
-				printer.printMessage(players.get(currentPlayer),"");
+				printer.printMessageByLanguage(locale,players.get(currentPlayer),"");
 				preparingForAskingQuestion(roll);
 			} else {
-				printer.printMessage(players.get(currentPlayer),"outpenalty");
+				printer.printMessageByLanguage(locale,players.get(currentPlayer),"outpenalty");
 				isGettingOutOfPenaltyBox = false;
 			}
 			
@@ -86,22 +89,22 @@ public class Game {
 		places[currentPlayer] = places[currentPlayer] + roll;
 		if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 		
-		printer.printMessage(players.get(currentPlayer) 
+		printer.printMessageByLanguage(locale,players.get(currentPlayer) 
 				, "playerlocation" 
 				, places[currentPlayer]);
-		printer.printMessage("category",currentCategory());
+		printer.printMessageByLanguage(locale,"category",currentCategory());
 		askQuestion();
 	}
 
 	private void askQuestion() {
 		if (currentCategory() == "Pop")
-			printer.printMessage(popQuestions.removeFirst());
+			printer.printMessageByLanguage(locale,popQuestions.removeFirst());
 		if (currentCategory() == "Science")
-			printer.printMessage(scienceQuestions.removeFirst());
+			printer.printMessageByLanguage(locale,scienceQuestions.removeFirst());
 		if (currentCategory() == "Sports")
-			printer.printMessage(sportsQuestions.removeFirst());
+			printer.printMessageByLanguage(locale,sportsQuestions.removeFirst());
 		if (currentCategory() == "Rock")
-			printer.printMessage(rockQuestions.removeFirst());		
+			printer.printMessageByLanguage(locale,rockQuestions.removeFirst());		
 	}
 
 	// randomly return a category
@@ -143,17 +146,17 @@ public class Game {
 	}
 
 	protected void currentCoinsAfterCorrectAnswer() {
-		printer.printMessage("correctanswer");
+		printer.printMessageByLanguage(locale,"correctanswer");
 		purses[currentPlayer]++;
-		printer.printMessage(players.get(currentPlayer) 
+		printer.printMessageByLanguage(locale,players.get(currentPlayer) 
 				, "now"
 				, purses[currentPlayer]
 				, "coins");
 	}
 	
 	public boolean wrongAnswer(){
-		printer.printMessage("incorrectanswer");
-		printer.printMessage(players.get(currentPlayer), "sentbox");
+		printer.printMessageByLanguage(locale,"incorrectanswer");
+		printer.printMessageByLanguage(locale,players.get(currentPlayer), "sentbox");
 		inPenaltyBox[currentPlayer] = true;
 		
 		currentPlayer++;

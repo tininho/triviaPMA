@@ -21,7 +21,7 @@ public class GameRunnerInspectorTest {
 	public void initialization(){
 		runnerInspector = new GameRunnerInspector();
 		checker = new Checker();
-		//System.setOut(new PrintStream(checker));
+		System.setOut(new PrintStream(checker));
 	}
 
 	@Test
