@@ -12,5 +12,10 @@ public class PropertiesSupplierTest {
 		String result = supplier.obtainOneMessage("added");
 		assertEquals(" was added", result);
 	}
+	
+	@Test
+	public void obtainOnePropertyMessageByLanguage(){
+		fail("not yet implemented");
+	}
 
 }
