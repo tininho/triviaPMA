@@ -1,6 +1,8 @@
 package com.adaptionsoft.games.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import java.util.Locale;
 
 import org.junit.Test;
 
@@ -15,7 +17,9 @@ public class PropertiesSupplierTest {
 	
 	@Test
 	public void obtainOnePropertyMessageByLanguage(){
-		fail("not yet implemented");
+		PropertiesSupplier supplier = new PropertiesSupplier();
+		String result = supplier.obtainOneMessageByLanguage("added", new Locale("ES"));
+		assertEquals(" fue incluido", result);
 	}
 
 }
