@@ -60,7 +60,7 @@ public class Game {
     public Game(int numberOfPlayers, Locale locale) {
     	
     	this(numberOfPlayers);
-    	this.locale= locale;
+    	this.locale = locale;
 	}
 
 	public boolean add(String playerName) {
