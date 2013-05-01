@@ -18,11 +18,14 @@ public class GameRunner {
 		Locale locale = null;
 		Game aGame;
 		
-		if (args[0]!=null && ! EMPTY_STRING.equals(args[0]))
-			numberOfPlayers = Integer.valueOf(args[0]);
-		
-		if (args[1]!=null && ! EMPTY_STRING.equals(args[1]))
-			locale = new Locale(args[1]);
+		if (args.length==1){
+			if (args[0]!=null && ! EMPTY_STRING.equals(args[0]))
+				numberOfPlayers = Integer.valueOf(args[0]);
+		}
+		if (args.length==2){
+			if (args[1]!=null && ! EMPTY_STRING.equals(args[1]))
+				locale = new Locale(args[1]);
+		}
 		
 		if (locale!=null)
 			aGame = init(numberOfPlayers, locale);

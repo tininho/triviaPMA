@@ -25,7 +25,7 @@ public class GameRunnerTest {
 		
 		GameRunner.main(args);
 		
-		assertEquals(0L,checker.getChecksumValue());
+		assertTrue(checker.getChecksumValue()>1000000L);
 	}
 	
 	@Test
@@ -34,7 +34,7 @@ public class GameRunnerTest {
 		
 		GameRunner.main(args);
 		
-		assertEquals(0L,checker.getChecksumValue());
+		assertTrue(checker.getChecksumValue()>1000000L);
 	}
 
 }
