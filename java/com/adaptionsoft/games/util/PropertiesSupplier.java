@@ -3,8 +3,6 @@ package com.adaptionsoft.games.util;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-import sun.security.util.ResourcesMgr;
-
 public class PropertiesSupplier {
 
 	ResourceBundle resourceBundle;
