@@ -33,8 +33,8 @@ public class GameInspector extends Game {
 
 		players.add(playerName);
 
-		printer.printMessage(locale, playerName, "added");
-		printer.printMessage(locale, "playernumber", players.size());
+		printer.printMessageByLanguage(locale, playerName, "added");
+		printer.printMessageByLanguage(locale, "playernumber", players.size());
 		return true;
 	}
 

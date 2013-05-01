@@ -25,7 +25,7 @@ public class GameInspectorByLanguageTest {
 	@Test
 	public void printMessageAddingPlayersBySpanishLanguage() {
 		aGame.addByLanguage("Romina");
-		assertEquals(535739654L, checker.getChecksumValue());
+		assertEquals(2996658673L, checker.getChecksumValue());
 	}
 
 }

@@ -8,7 +8,7 @@ public class PropertiesSupplier {
 	ResourceBundle resourceBundle;
 	
 	public PropertiesSupplier(){
-		resourceBundle = ResourceBundle.getBundle("localBundle");
+		resourceBundle = ResourceBundle.getBundle("localBundle", Locale.ENGLISH);
 	}
 	
 	public String obtainOneMessage(String key) {
