@@ -34,7 +34,7 @@ public class GameRunnerInspectorTest {
 		GameRunner.run(aGame, random);
 
 		// verify
-		assertEquals(357978942L, checker.getChecksumValue());
+		assertEquals(3078521546L, checker.getChecksumValue());
 	}
 
 }

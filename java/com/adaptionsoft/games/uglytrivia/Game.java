@@ -56,6 +56,36 @@ public class Game {
 			rockQuestions.addLast(supplier.obtainOneMessage("rock") + i);
 		}
 	}
+    
+    public Game(int numberOfPlayers, Locale locale) {
+    	
+    	gameConfiguration = new GameConfiguration();
+    	printer = new Printer();
+    	supplier = new PropertiesSupplier();
+    	this.locale = locale;
+    	
+    	if (gameConfiguration.isNotAnAllowedConfiguration(numberOfPlayers)){
+    		printer.printMessageByLanguage(locale,"confallowed");
+    		System.exit(0);
+    	}
+
+		players = new ArrayList<String>(numberOfPlayers);
+		places = new int[numberOfPlayers];
+		purses = new int[numberOfPlayers];
+		inPenaltyBox = new boolean[numberOfPlayers];
+
+		popQuestions = new LinkedList<String>();
+		scienceQuestions = new LinkedList<String>();
+		sportsQuestions = new LinkedList<String>();
+		rockQuestions = new LinkedList<String>();
+
+		for (int i = 0; i < 50; i++) {
+			popQuestions.addLast(supplier.obtainOneMessage("pop") + i);
+			scienceQuestions.addLast(supplier.obtainOneMessage("science") + i);
+			sportsQuestions.addLast(supplier.obtainOneMessage("sports") + i);
+			rockQuestions.addLast(supplier.obtainOneMessage("rock") + i);
+		}
+	}
 
 	public boolean add(String playerName) {
 		
